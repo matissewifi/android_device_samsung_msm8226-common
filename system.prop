@@ -37,9 +37,6 @@ ro.qc.sdk.izat.service_mask=0x0
 # IO Scheduler
 sys.io.scheduler=bfq
 
-# Perf
-ro.vendor.extension_library=/vendor/lib/libqc-opt.so
-
 # Radio
 persist.data.netmgrd.qos.enable=false
 persist.data.qmi.adb_logmask=0
