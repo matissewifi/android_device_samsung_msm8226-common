@@ -156,5 +156,9 @@ PRODUCT_PACKAGES += \
     libwcnss_qmi \
     wcnss_service
 
+# Telephony-ext
+PRODUCT_PACKAGES += telephony-ext
+PRODUCT_BOOT_JARS += telephony-ext
+
 # Inherit from qcom-common
 $(call inherit-product, device/samsung/qcom-common/qcom-common.mk)
