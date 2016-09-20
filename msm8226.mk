@@ -42,7 +42,6 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    camera.msm8226 \
     libstlport \
     libxml2 \
     Snap
