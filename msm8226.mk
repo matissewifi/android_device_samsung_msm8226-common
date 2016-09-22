@@ -160,5 +160,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += telephony-ext
 PRODUCT_BOOT_JARS += telephony-ext
 
+# Radio
+PRODUCT_PACKAGES += \
+    libril_shim \
+    libprotobuf-cpp-full
+
 # Inherit from qcom-common
 $(call inherit-product, device/samsung/qcom-common/qcom-common.mk)

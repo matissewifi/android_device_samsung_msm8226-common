@@ -52,7 +52,7 @@ BOARD_CHARGER_SHOW_PERCENTAGE := true
 BOARD_HARDWARE_CLASS += $(VENDOR_PATH)/cmhw
 
 # Custom RIL class
-BOARD_RIL_CLASS := ../../../$(VENDOR_PATH)/ril
+BOARD_RIL_CLASS := ../../../device/samsung/msm8226-common/ril
 
 # Display
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
