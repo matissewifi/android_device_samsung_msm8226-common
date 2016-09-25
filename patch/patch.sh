@@ -8,11 +8,17 @@ if [ "$key" = 'p' ]; then
     # Space pressed, do something
 # echo [$key] is empty when SPACE is pressed # uncomment to trace
 
-#patchdir="$build_root/hardware/qcom/audio" # Start patch1
-#echo -e ${CL_BLU}"PATCHING $patchdir"${CL_RST}
-#cd $patchdir
-#git fetch http://gerrit.dirtyunicorns.com/android_hardware_qcom_audio refs/changes/29/2029/1 && git cherry-pick FETCH_HEAD
-#cd $build_root # End patch1
+patchdir="$build_root/build"
+echo -e ${CL_BLU}"PATCHING $patchdir"${CL_RST}
+cd $patchdir
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_build refs/changes/46/163346/4 && git cherry-pick FETCH_HEAD
+cd $build_root
+
+patchdir="$build_root/build/kati"
+echo -e ${CL_BLU}"PATCHING $patchdir"${CL_RST}
+cd $patchdir
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_build_kati refs/changes/04/163504/2 && git cherry-pick FETCH_HEAD
+cd $build_root
 
 echo -e ""
 echo -e ${CL_RED}"Applying patches"${CL_RST}
