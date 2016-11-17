@@ -107,11 +107,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     power.msm8226
 
+# ADB
+PRODUCT_COPY_FILES += \
+    device/samsung/msm8226-common/configs/adbkey.pub:root/adb_keys
+
 # set default USB configuration
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=adb \
-    ro.adb.secure=0 \
-    ro.secure=0
+    persist.sys.usb.config=adb
 
 # common msm8226
 $(call inherit-product, device/samsung/qcom-common/qcom-common.mk)
