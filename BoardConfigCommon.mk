@@ -24,6 +24,9 @@
 #TARGET_ARCH_ABI := armeabi-v7a
 #TARGET_CPU_VARIANT := krait
 
+# ANT+
+BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
+
 # Architecture/platform
 BOARD_VENDOR := samsung
 FORCE_32_BIT := true
