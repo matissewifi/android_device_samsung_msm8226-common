@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <!--
 /*
 ** Copyright 2014, The CyanogenMod Project
@@ -18,12 +17,6 @@
 -->
 
 <resources>
-	<!-- Maximum number of supported users -->
-	<integer name="config_multiuserMaximumUsers">4</integer>
-	<!-- Whether UI for multi user should be shown -->
-	<bool name="config_enableMultiUserUI">true</bool>
-	<!-- Boolean to enable stk functionality on Samsung phones -->
-	<bool name="config_samsung_stk">true</bool>
-	<!-- If this is true, the screen will fade off. -->
-	<bool name="config_animateScreenLights">true</bool>
+    <!-- Whether or not the dock settings are to be displayed for this device when docked -->
+    <bool name="has_dock_settings">true</bool>
 </resources>

@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <!--
 /*
 ** Copyright 2014, The CyanogenMod Project
@@ -18,12 +17,17 @@
 -->
 
 <resources>
-	<!-- Maximum number of supported users -->
-	<integer name="config_multiuserMaximumUsers">4</integer>
-	<!-- Whether UI for multi user should be shown -->
-	<bool name="config_enableMultiUserUI">true</bool>
-	<!-- Boolean to enable stk functionality on Samsung phones -->
-	<bool name="config_samsung_stk">true</bool>
-	<!-- If this is true, the screen will fade off. -->
-	<bool name="config_animateScreenLights">true</bool>
+    <!-- Full path to the sysfs toggle -->
+    <string name="flashDevice">/sys/class/leds/led:flash_torch/brightness</string>
+
+    <!-- Lowest setting -->
+    <integer name="valueOn">5</integer>
+    <!-- Middle setting -->
+    <integer name="valueHigh">175</integer>
+    <!-- Highest setting, leave -1 if it doesn't exist -->
+    <integer name="valueDeathRay">255</integer>
+
+    <!-- If the device supports high brightness mode, enable this -->
+    <bool name="hasHighBrightness">true</bool>
+
 </resources>
