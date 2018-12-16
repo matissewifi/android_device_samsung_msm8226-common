@@ -17,4 +17,6 @@ or to help maintain the rom & the devices.
 
 Work In Progress. **Need Help!!!!**
 
+Branch need to build **LineageOS-14.1/LightOS-1.0**
+
 Copyright **2018** - **BAProductions**(The Tab 4 Light Project)
