@@ -1,4 +1,4 @@
-# Copyright (C) 2012 The CyanogenMod Project
+# Copyright (C) 2014 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,57 +15,33 @@
 # inherit from qcom-common
 -include device/samsung/qcom-common/BoardConfigCommon.mk
 
-# Platform
-#TARGET_BOARD_PLATFORM := msm8226
-#TARGET_BOARD_PLATFORM_GPU := qcom-adreno305
+LOCAL_PATH := device/samsung/msm8226-common
 
-# Architecture
-#TARGET_ARCH := arm
-#TARGET_ARCH_ABI := armeabi-v7a
-#TARGET_CPU_VARIANT := krait
+include device/samsung/msm8226-common/board/*.mk
 
-# ANT+
-BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
+TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
-# Architecture/platform
-BOARD_VENDOR := samsung
-FORCE_32_BIT := true
-TARGET_ARCH := arm
-TARGET_ARCH_VARIANT := armv7-a-neon
-TARGET_BOARD_PLATFORM := msm8226
-TARGET_BOARD_PLATFORM_GPU       := qcom-adreno305
-TARGET_CPU_ABI := armeabi-v7a
-TARGET_CPU_ABI2 := armeabi
-#TARGET_CPU_CORTEX_A53 := true
-TARGET_CPU_SMP := true
-TARGET_CPU_VARIANT := krait
-TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
+#TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
+#TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 
-# Audio
-BOARD_USES_ALSA_AUDIO := true
+#TODO: Check
+# CMHW
+#BOARD_HARDWARE_CLASS += $(LOCAL_PATH)/cmhw
 
-# Charger
-BOARD_BATTERY_DEVICE_NAME := "battery"
-BOARD_CHARGING_CMDLINE_NAME := "androidboot.bootchg"
-BOARD_CHARGING_CMDLINE_VALUE := "true"
+#TODO: Check
+# Custom RIL class
+#BOARD_RIL_CLASS := ../../../$(LOCAL_PATH)/ril
 
-# Display
-NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
-OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
+# QCOM Hardware
+BOARD_USES_QCOM_HARDWARE := true
 
-# Shader cache config options
-# Maximum size of the  GLES Shaders that can be cached for reuse.
-# Increase the size if shaders of size greater than 12KB are used.
-MAX_EGL_CACHE_KEY_SIZE := 12*1024
+# Fonts
+EXTENDED_FONT_FOOTPRINT := true
 
-# Maximum GLES shader cache size for each app to store the compiled shader
-# binaries. Decrease the size if RAM or Flash Storage size is a limitation
-# of the device.
-MAX_EGL_CACHE_SIZE := 2048*1024
+#TODO: Check
+# Properties (reset them here, include more in device if needed)
+#TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
 
-# Init
-TARGET_INIT_VENDOR_LIB := libinit_msm8226
-TARGET_RECOVERY_DEVICE_MODULES := libinit_msm8226
-
-# Time services
-BOARD_USES_QC_TIME_SERVICES := true
+# SELinux
+-include device/qcom/sepolicy/sepolicy.mk
+#BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
