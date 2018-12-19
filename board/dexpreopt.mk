@@ -1,5 +1,9 @@
 # Basic dexpreopt
 ifeq ($(HOST_OS),linux)
-      #We need this otherwise WIFI causes a bootloop on each connect!
+  ifneq ($(TARGET_BUILD_VARIANT),eng)
+    ifeq ($(WITH_DEXPREOPT),)
       WITH_DEXPREOPT := true
+      WITH_DEXPREOPT_BOOT_IMG_ONLY := true
+    endif
+  endif
 endif
