@@ -23,6 +23,10 @@ PRODUCT_PACKAGES += \
 	com.dsi.ant.antradio_library \
 	libantradio
 
+# SamsungDoze
+PRODUCT_PACKAGES += \
+    SamsungDoze
+
 # System properties
 PRODUCT_PROPERTY_OVERRIDES += \
     audio.offload.buffer.size.kb=32 \
