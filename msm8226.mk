@@ -75,7 +75,7 @@ PRODUCT_PACKAGES += \
     libboringssl-compat \
     libstlport \
     libxml2 \
-    Snap
+    Camera2
 
 # Input device
 PRODUCT_COPY_FILES += \
@@ -91,7 +91,7 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8226 \
     memtrack.msm8226
 
-#GPS
+# GPS
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/flp.conf:system/etc/flp.conf \
 
@@ -159,6 +159,9 @@ PRODUCT_COPY_FILES += \
 # set default USB configuration
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=adb
+
+PRODUCT_PACKAGES += \
+    libwcnss_qmi
 
 # common msm8226
 $(call inherit-product, device/samsung/qcom-common/qcom-common.mk)

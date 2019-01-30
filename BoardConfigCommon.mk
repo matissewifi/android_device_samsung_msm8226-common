@@ -20,6 +20,8 @@ LOCAL_PATH := device/samsung/msm8226-common
 include device/samsung/msm8226-common/board/*.mk
 
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
+TARGET_PROVIDES_WCNSS_QMI        := true
+TARGET_USES_QCOM_WCNSS_QMI       := true
 
 #TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 #TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
