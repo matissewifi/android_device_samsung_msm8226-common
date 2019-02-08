@@ -1,6 +1,10 @@
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
+#ifeq ($(TARGET_NEED_EXPOSURE_HACK),true)
+    LOCAL_CFLAGS += -DEXPOSURE_HACK
+#endif
+
 LOCAL_C_INCLUDES := \
     system/media/camera/include
 
