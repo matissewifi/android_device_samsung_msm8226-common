@@ -70,12 +70,11 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    camera.vendor.msm8226 \
     camera.msm8226 \
     libboringssl-compat \
     libstlport \
     libxml2 \
-    Camera2
+    Snap
 
 # Input device
 PRODUCT_COPY_FILES += \
