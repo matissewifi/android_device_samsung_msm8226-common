@@ -64,10 +64,6 @@ PRODUCT_COPY_FILES += \
 #PRODUCT_COPY_FILES += \
 #     $(LOCAL_PATH)/configs/audio_effects.conf:system/vendor/etc/audio_effects.conf
 
-PRODUCT_PACKAGES += \
-    libwvm_shim \
-    imx175_shim
-
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8226 \
