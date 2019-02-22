@@ -14,30 +14,15 @@
 
 LOCAL_PATH := device/samsung/msm8226-common
 
-# Overlays
-DEVICE_PACKAGE_OVERLAYS += device/samsung/msm8226-common/overlay
+# ADB
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/adbkey.pub:root/adb_keys
 
 # ANT+
 PRODUCT_PACKAGES += \
 	AntHalService \
 	com.dsi.ant.antradio_library \
 	libantradio
-
-# SamsungDoze
-PRODUCT_PACKAGES += \
-    SamsungDoze
-
-# System properties
-PRODUCT_PROPERTY_OVERRIDES += \
-    audio.offload.buffer.size.kb=32 \
-    audio.offload.gapless.enabled=false \
-    av.offload.enable=true
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.opengles.version=196608
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.timed.enable=true
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -64,6 +49,9 @@ PRODUCT_COPY_FILES += \
 #PRODUCT_COPY_FILES += \
 #     $(LOCAL_PATH)/configs/audio_effects.conf:system/vendor/etc/audio_effects.conf
 
+# Bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
+
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8226 \
@@ -71,13 +59,6 @@ PRODUCT_PACKAGES += \
     libstlport \
     libxml2 \
     Snap
-
-# Input device
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/idc/sec_e-pen.idc:system/usr/idc/sec_e-pen.idc \
-	$(LOCAL_PATH)/idc/sec_touchscreen.idc:system/usr/idc/sec_touchscreen.idc \
-	$(LOCAL_PATH)/idc/Synaptics_HID_TouchPad.idc:system/usr/idc/Synaptics_HID_TouchPad.idc \
-	$(LOCAL_PATH)/idc/Synaptics_RMI4_TouchPad_Sensor.idc:system/usr/idc/Synaptics_RMI4_TouchPad_Sensor.idc
 
 # Display
 PRODUCT_PACKAGES += \
@@ -90,14 +71,21 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/flp.conf:system/etc/flp.conf \
 
-# Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
-
 # Keylayouts
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/cyttsp-i2c.kl:system/usr/keylayout/cyttsp-i2c.kl \
     $(LOCAL_PATH)/keylayout/keypad_8960.kl:system/usr/keylayout/keypad_8960.kl \
     $(LOCAL_PATH)/keylayout/Vendor_04e8_Product_7021.kl:system/usr/keylayout/Vendor_04e8_Product_7021.kl
+
+# Inherit from qcom-common
+$(call inherit-product, device/samsung/qcom-common/qcom-common.mk)
+
+# Input device
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/idc/sec_e-pen.idc:system/usr/idc/sec_e-pen.idc \
+    $(LOCAL_PATH)/idc/sec_touchscreen.idc:system/usr/idc/sec_touchscreen.idc \
+    $(LOCAL_PATH)/idc/Synaptics_HID_TouchPad.idc:system/usr/idc/Synaptics_HID_TouchPad.idc \
+    $(LOCAL_PATH)/idc/Synaptics_RMI4_TouchPad_Sensor.idc:system/usr/idc/Synaptics_RMI4_TouchPad_Sensor.idc
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -114,6 +102,13 @@ PRODUCT_PACKAGES += \
     libOmxVdec \
     libOmxVenc \
     libstagefrighthw
+
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += device/samsung/msm8226-common/overlay
+
+# QC Perf
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.extension_library=/system/lib/libqc-opt.so
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -141,16 +136,25 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     power.msm8226
 
-# ADB
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/adbkey.pub:root/adb_keys
-
 # set default USB configuration
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=adb
 
+# SamsungDoze
+PRODUCT_PACKAGES += \
+    SamsungDoze
+
+# System properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    audio.offload.buffer.size.kb=32 \
+    audio.offload.gapless.enabled=false \
+    av.offload.enable=true
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.opengles.version=196608
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.timed.enable=true
+
 PRODUCT_PACKAGES += \
     libwcnss_qmi
-
-# common msm8226
-$(call inherit-product, device/samsung/qcom-common/qcom-common.mk)
