@@ -104,7 +104,9 @@ PRODUCT_PACKAGES += \
     libstagefrighthw
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += device/samsung/msm8226-common/overlay
+DEVICE_PACKAGE_OVERLAYS += \
+	$(LOCAL_PATH)/overlay \
+	$(LOCAL_PATH)/overlay-lineage
 
 # QC Perf
 PRODUCT_PROPERTY_OVERRIDES += \
