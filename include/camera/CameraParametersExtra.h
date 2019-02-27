@@ -66,6 +66,10 @@ const char CameraParameters::KEY_EXIF_DATETIME[] = "exif-datetime"; \
 const char CameraParameters::KEY_AUTO_EXPOSURE[] = "auto-exposure"; \
 const char CameraParameters::KEY_SUPPORTED_AUTO_EXPOSURE[] = "auto-exposure-values"; \
 const char CameraParameters::KEY_SUPPORTED_LENSSHADE_MODES[] = "lensshade-values"; \
+const char CameraParameters::KEY_EXPOSURE_COMPENSATION[] = "exposure-compensation"; \
+const char CameraParameters::KEY_MAX_EXPOSURE_COMPENSATION[] = "max-exposure-compensation"; \
+const char CameraParameters::KEY_MIN_EXPOSURE_COMPENSATION[] = "min-exposure-compensation"; \
+const char CameraParameters::KEY_EXPOSURE_COMPENSATION_STEP[] = "exposure-compensation-step"; \
 const char CameraParameters::LENSSHADE_ENABLE[] = "enable"; \
 const char CameraParameters::LENSSHADE_DISABLE[] = "disable"; \
 const char CameraParameters::MCE_ENABLE[] = "enable"; \
@@ -170,6 +174,10 @@ const char CameraParameters::SCENE_MODE_ASD[] = "asd"; \
     static const char KEY_AUTO_EXPOSURE[]; \
     static const char KEY_SUPPORTED_AUTO_EXPOSURE[]; \
     static const char KEY_SUPPORTED_LENSSHADE_MODES[]; \
+	static const char CameraParameters::KEY_EXPOSURE_COMPENSATION[]; \
+	static const char CameraParameters::KEY_MAX_EXPOSURE_COMPENSATION[]; \
+	static const char CameraParameters::KEY_MIN_EXPOSURE_COMPENSATION[]; \
+	static const char CameraParameters::KEY_EXPOSURE_COMPENSATION_STEP[]; \
     static const char LENSSHADE_ENABLE[]; \
     static const char LENSSHADE_DISABLE[]; \
     static const char MCE_ENABLE[]; \

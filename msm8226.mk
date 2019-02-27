@@ -58,7 +58,7 @@ PRODUCT_PACKAGES += \
     libboringssl-compat \
     libstlport \
     libxml2 \
-    Snap
+    Camera2
 
 # Display
 PRODUCT_PACKAGES += \
