@@ -12,8 +12,20 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 ADDITIONAL_DEFAULT_PROPERTIES += \
     media.aac_51_output_enabled=true \
     mm.enable.smoothstreaming=true \
-    ro.qc.sdk.audio.fluencetype=none \
-    use.voice.path.for.pcm.voip=false
+	ro.qc.sdk.audio.ssr=false \
+	ro.qc.sdk.audio.fluencetype=none \
+	persist.audio.fluence.voicecall=true \
+	persist.audio.fluence.voicerec=false \
+	persist.audio.fluence.speaker=true \
+	tunnel.audio.encode = true \
+	af.resampler.quality=4 \
+	ro.hdmi.enable=true \
+	use.voice.path.for.pcm.voip=false \
+	use.dedicated.device.for.voip=true
+
+# OfficalBuilds
+ADDITIONAL_DEFAULT_PROPERTIES += \
+	ro.debuggable=1
 
 # Bluetooth
 ADDITIONAL_DEFAULT_PROPERTIES += \
@@ -62,19 +74,6 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 ADDITIONAL_DEFAULT_PROPERTIES += \
     media.stagefright.legacyencoder=true \
     media.stagefright.less-secure=true \
-
-# Radio
-ADDITIONAL_DEFAULT_PROPERTIES += \
-    persist.data.netmgrd.qos.enable=false \
-    persist.data.qmi.adb_logmask=0 \
-    persist.radio.add_power_save=1 \
-    rild.libargs=-d /dev/smd0 \
-    rild.libpath=/system/lib/libsec-ril.so \
-    ro.telephony.ril_class=SamsungMSM8226RIL \
-    ro.telephony.ril.config=simactivation \
-    ro.use_data_netmgrd=false \
-    persist.radio.no_wait_for_card=true \
-    keyguard.no_require_sim=true \
 
 # Strict Mode
 ADDITIONAL_DEFAULT_PROPERTIES += \
