@@ -40,11 +40,8 @@ BOARD_USES_QCOM_HARDWARE := true
 # Fonts
 EXTENDED_FONT_FOOTPRINT := true
 
-#TODO: Check
-# Properties (reset them here, include more in device if needed)
+# Properties
 TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
--include $(LOCAL_PATH)/system_prop.mk
 
 # SELinux
 -include device/qcom/sepolicy/sepolicy.mk
-#BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
