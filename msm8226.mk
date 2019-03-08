@@ -14,10 +14,6 @@
 
 LOCAL_PATH := device/samsung/msm8226-common
 
-# ADB
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/adbkey.pub:root/adb_keys
-
 # ANT+
 PRODUCT_PACKAGES += \
 	AntHalService \
