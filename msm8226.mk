@@ -43,6 +43,9 @@ PRODUCT_COPY_FILES += \
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
+PRODUCT_PACKAGES += \
+    libwvm_shim
+
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8226 \
