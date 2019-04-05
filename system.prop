@@ -54,8 +54,8 @@ sys.io.scheduler=bfq
 ro.vendor.extension_library=/vendor/lib/libqti-perfd-client.so
 
 # CWMR Options
-#ro.cwm.forbid_format=/boot,/firmware,/firmware-modem
-#ro.cwm.forbid_mount=/boot
+ro.cwm.forbid_format=/boot,/firmware,/firmware-modem
+ro.cwm.forbid_mount=/boot
 
 # Media
 media.stagefright.legacyencoder=true
